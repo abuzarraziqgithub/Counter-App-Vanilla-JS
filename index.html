@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let counter = 0;
+      const increment = function () {
+        h1.textContent = ++counter;
+      };
+      const decrement = function () {
+        if (counter > 0) h1.textContent = --counter;
+      };
+      const reset = function () {
+        h1.textContent = counter = 0;
+      };
+
+      const rootElement = document.getElementById("root");
+      const h1 = document.createElement("h1");
+      const resetButton = document.createElement("button");
+      const incrButton = document.createElement("button");
+      const decrButton = document.createElement("button");
+      h1.innerHTML = counter;
+      resetButton.innerHTML = "Reset";
+      incrButton.innerHTML = "Increment";
+      decrButton.innerHTML = "Decrement";
+      resetButton.addEventListener("click", reset);
+      incrButton.addEventListener("click", increment);
+      decrButton.addEventListener("click", decrement);
+
+      rootElement.appendChild(h1);
+      rootElement.appendChild(resetButton);
+      rootElement.appendChild(incrButton);
+      rootElement.appendChild(decrButton);
+    </script>
+  </body>
+</html>
